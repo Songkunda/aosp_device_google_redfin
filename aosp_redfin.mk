@@ -75,3 +75,7 @@ PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_redfin
 PRODUCT_DEVICE := redfin
 PRODUCT_MODEL := AOSP on redfin
+
+-include $(LOCAL_DIR)/apps/preinstall_apps.mk
+# 这个是配置selinux权限的
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(LOCAL_DIR)/sepolicy/public

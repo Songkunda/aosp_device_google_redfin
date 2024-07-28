@@ -1,0 +1,12 @@
+# system/core/rootdir/init.rc
+# 开机完成后，启动安装服务
+on property:sys.boot_completed=1
+    start preinstall_app
+
+# 安装服务就是执行preinstall_app.sh脚本
+service preinstall_app /system/bin/preinstall_app.sh
+    class main
+    user root
+    group root
+    seclabel u:r:preinstall_app:s0
+    disabled
